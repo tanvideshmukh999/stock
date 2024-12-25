@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Tracker DashBoard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Stock Tracker Dashboard</h1>
+            <div class="search-container">
+                <div>
+                    <input type="text" id="stockSymbol" placeholder="Enter stock symbol(e.g.,AAPL)" aria-label="Stock symbol input">
+                    <button onclick="searchStock()" aria-label="Serach stock">Search</button>
+                </div>
+
+                <div>
+                    <select id="trendingStocks" aria-label="Trending stocks dropdown">
+                        <option value="">Select Trending Stock</option>
+                    </select>
+                    <button>Load Stock</button>
+                </div>
+            </div>
+           
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <h2>Stock Overview</h2>
+                <div id="stockInfo" class="stock-info"></div>
+            </div>
+            <div class="card">
+                <h2>Market Statistics</h2>
+                <div id="marketStats" class="market-stats"></div>
+            </div>
+
+            <div class="card">
+                <h2>Price History</h2>
+                <div class="chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Stock Comparison</h2>
+                <table class="stock-table">
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Price</th>
+                            <th>Change</th>
+                            <th>Volume</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
